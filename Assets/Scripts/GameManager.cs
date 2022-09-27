@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     private int nowEat = 0;
     public int score = 0;
 
+    public int scenceIndex;
     private void Awake()
     {
         _instance = this;
@@ -60,6 +61,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SetGameState(false);
+
+      
+            SetGameState(true);
+            Invoke("CreateSuperPacdot", 10f);
+            gamePanel.SetActive(true);
+            GetComponent<AudioSource>().Play();
+       
     }
 
     private void Update()
